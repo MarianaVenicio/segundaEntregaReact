@@ -1,24 +1,31 @@
+import { Navigate, Route, BrowserRouter as Router,Routes} from 'react-router-dom'
 
-import { BrowserRouter as Router} from 'react-router-dom';
-import { NavBar } from './components/NavBar/NavBar';
-import  ItemCount  from './components/ItemCount/ItemCount';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import { ItemDetail} from './components/temDetail/ItemDetail';
+import { NavBar } from './components/NavBar/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemCount from './components/ItemCount/ItemCount'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from 'react-router-dom';
 
+
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <Router>
       <NavBar />
-      <ItemListContainer greeting={"saludos"} />
-      <ItemDetail />
+      <Routes>
+        <Route path='/' element={ <ItemListContainer />} />
+        <Route path='/categoria/:categoria' element={ <ItemListContainer />} />
+        <Route path='/detail/:pid' element={<ItemDetailContainer />} />
+        <Route path= '/notfound' element={<Notfound404 />} />
+        <Route path='*' element= {<Navigate to='/' />} />
+      </Routes>
+
       <ItemCount />
-      
     </Router>
   );
 }
 
 export default App;
+
+

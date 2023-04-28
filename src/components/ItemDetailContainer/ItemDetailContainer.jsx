@@ -1,10 +1,22 @@
+import { UseParams } from "react-router-dom";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 
-import {ItemDetail} from  "../ItemDetail/ItemDetail"
 export const itemDetailContainer = () => {
- 
-    return (
+  const { pid } = useParams();
+  console.log(pid);
+
+  return (
     <div>
-        <ItemDetail/>
-        </div>
-  )
-}
+      {pid}
+      <ItemDetail 
+     
+      />
+    </div>
+  );
+};
+
+
+
+
+
+
