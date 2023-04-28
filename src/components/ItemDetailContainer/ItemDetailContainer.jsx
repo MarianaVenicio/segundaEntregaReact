@@ -1,4 +1,5 @@
-import { UseParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import App from "../../App";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export const itemDetailContainer = () => {
@@ -8,15 +9,7 @@ export const itemDetailContainer = () => {
   return (
     <div>
       {pid}
-      <ItemDetail 
-     
-      />
+      <ItemDetail />
     </div>
   );
 };
-
-
-
-
-
-

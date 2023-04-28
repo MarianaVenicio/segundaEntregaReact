@@ -24,7 +24,7 @@ const ItemListContainer = ({ greeting }) => {
     <center>
       <h2>Buscar Producto</h2>
       <br></br>
-      {/* {filterState} */}
+      
       <input type="text" value={filterState} onChange={handleFilterChange} />
 
       {isLoading ? (
